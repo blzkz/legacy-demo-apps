@@ -36,18 +36,20 @@ if (isset($_POST["approve"])) {
     fwrite($dataFile, json_encode($data_list, JSON_PRETTY_PRINT));
     fclose($dataFile);
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "$webhook");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_USERPWD, "$apikey:");
-    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data_back);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    $output = curl_exec($ch);
-    $info = curl_getinfo($ch);
-    curl_close($ch);
- /*   echo $data_back."<br>";
+    if (isset($webhook)) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "$webhook");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERPWD, "$apikey:");
+        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_back);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        $output = curl_exec($ch);
+        $info = curl_getinfo($ch);
+        curl_close($ch);
+    }
+    /*   echo $data_back."<br>";
     echo $output."<br>";
     var_dump($info);
 */

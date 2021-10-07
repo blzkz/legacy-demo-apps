@@ -7,8 +7,13 @@ $shortName = "Request";
 $shortNameLower = strtolower($shortName);
 $shortNamePlural = "Requests";
 
-$webhook = "https://orchestrate.appiancloud.com/suite/webapi/updateCC";
-$apikey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmY2Q0YzM0Ni1hNGEyLTQwNGUtYTkyYS04YzAxYTE0MWU2ZjkifQ.8GpEhyFpyZo6fMsDzVBbtm2Mvyd7lj-b7vIEQ2o-Alk";
+if (file_exists("./data/apicreds.json"))
+    $creds = json_decode(file_get_contents('./data/apicreds.json'),true);
+else
+    $creds = ["url" => "", "key" => ""];
+
+$webhook = $creds["url"];
+$apikey = $creds["key"];
 
 $fields = [
     "hidden" =>
@@ -60,6 +65,15 @@ $summaryFields = [
     "lname",
     "type"
 ];
+
+$data_back_sample = array(
+    "requestId" => "4032",
+    "ccLastFour" => "3242",
+    "expiration" => "10/1/2026",
+    "trackingNumber" => "023080u3290383420923409",
+    "shippedDate" => "10/03/2021",
+    "etaDate" => "10/06/2021"
+);
 
 $ccNumber = rand(1000,9999)."-".rand(1000,9999)."-".rand(1000,9999)."-".rand(1000,9999);
 $expDate = date("m")."/".(date("Y")+5);

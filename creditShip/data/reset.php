@@ -14,3 +14,4 @@ $data = json_decode($file, FALSE);
 
 echo "There are now ".count($data)." $shortNamePlural";
 echo "<br><br><a href=\"../list.php\">Go Back</a>";
+echo "<br><br><br><br><a href=\"../apicredentials.php\">Or Update API Credentials?</a>";
