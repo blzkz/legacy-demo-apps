@@ -1,0 +1,245 @@
+[
+    {
+        "claim": 1,
+        "reinsured": "Boylston Insurance",
+        "claimant": "Joe",
+        "type": "Joe",
+        "month": "August, 2021",
+        "policy": "0013i00002O2qVfQAJ",
+        "location": "Joe",
+        "totalLossToCover": "4",
+        "totalPayableAmount": "6",
+        "lineitems": [
+            {
+                "dateOfLoss": "9\/1\/2021",
+                "description": "description",
+                "incurred": "yes",
+                "paid": "no",
+                "payable": "6"
+            },
+            {
+                "dateOfLoss": "9\/2\/2021",
+                "description": "description2",
+                "incurred": "yes",
+                "paid": "no",
+                "payable": "6"
+            }
+        ]
+    },
+    {
+        "claim": 2,
+        "reinsured": "Kreiger Insurance",
+        "claimant": "Josh",
+        "type": "Josh",
+        "month": "August, 2021",
+        "policy": "0013i00002OQq4KQAT",
+        "location": "Josh",
+        "totalLossToCover": "4",
+        "totalPayableAmount": "6",
+        "lineitems": [
+            {
+                "dateOfLoss": "9\/1\/2021",
+                "description": "description",
+                "incurred": "yes",
+                "paid": "no",
+                "payable": "6"
+            },
+            {
+                "dateOfLoss": "9\/2\/2021",
+                "description": "description2",
+                "incurred": "yes",
+                "paid": "no",
+                "payable": "6"
+            }
+        ]
+    },
+    {
+        "claim": 3,
+        "reinsured": "Shanahan, Padberg and Wiza",
+        "claimant": "1",
+        "type": "1",
+        "month": "August, 2021",
+        "policy": "0013i00002ORBclQAH",
+        "location": "1",
+        "totalLossToCover": "4",
+        "totalPayableAmount": "4",
+        "lineitems": [
+            {
+                "dateOfLoss": "2",
+                "description": "2",
+                "incurred": "2",
+                "paid": "2",
+                "payable": "2"
+            },
+            {
+                "dateOfLoss": "3",
+                "description": "3",
+                "incurred": "3",
+                "paid": "3",
+                "payable": "3"
+            }
+        ]
+    },
+    {
+        "claim": 4,
+        "reinsured": "Schrieder and Sons",
+        "claimant": "7",
+        "type": "8",
+        "month": "August, 2021",
+        "policy": "0013i00002O2lylQAB",
+        "location": "8",
+        "totalLossToCover": "9",
+        "totalPayableAmount": "8",
+        "lineitems": [
+            {
+                "dateOfLoss": "9",
+                "description": "9",
+                "incurred": "9",
+                "paid": "9",
+                "payable": "9"
+            }
+        ]
+    },
+    {
+        "claim": 5,
+        "reinsured": "Shanahan, Padberg and Wiza",
+        "claimant": "4",
+        "type": "4",
+        "month": "August, 2021",
+        "policy": "0013i00002OPuexQAD",
+        "location": "4",
+        "totalLossToCover": "4",
+        "totalPayableAmount": "4",
+        "lineitems": [
+            {
+                "dateOfLoss": "4",
+                "description": "4",
+                "incurred": "4",
+                "paid": "4",
+                "payable": "4"
+            },
+            {
+                "dateOfLoss": "4",
+                "description": "4",
+                "incurred": "4",
+                "paid": "4",
+                "payable": "4"
+            }
+        ]
+    },
+    {
+        "claim": 6,
+        "reinsured": "Mann-Towne",
+        "claimant": "test",
+        "type": "slkdfj",
+        "month": "August, 2021",
+        "policy": "0013i00002OjY3eQAF",
+        "location": "lkjkl",
+        "totalLossToCover": "2q3re23f",
+        "totalPayableAmount": "23e423",
+        "lineitems": [
+            {
+                "dateOfLoss": "sadfsa",
+                "description": "",
+                "incurred": "sdfasdf",
+                "paid": "",
+                "payable": "sfdsfsd"
+            },
+            {
+                "dateOfLoss": "",
+                "description": "sdfdsafas",
+                "incurred": "",
+                "paid": "",
+                "payable": ""
+            },
+            {
+                "dateOfLoss": "",
+                "description": "",
+                "incurred": "",
+                "paid": "sdafdsf",
+                "payable": ""
+            }
+        ]
+    },
+    {
+        "claim": 7,
+        "reinsured": "Kreiger Insurance",
+        "claimant": "",
+        "type": "",
+        "month": "August, 2021",
+        "policy": "0013i00002OPzZLQA1",
+        "location": "",
+        "totalLossToCover": "",
+        "totalPayableAmount": "",
+        "lineitems": [
+            {
+                "dateOfLoss": "",
+                "description": "",
+                "incurred": "",
+                "paid": "",
+                "payable": ""
+            },
+            {
+                "dateOfLoss": "",
+                "description": "",
+                "incurred": "",
+                "paid": "",
+                "payable": ""
+            }
+        ]
+    },
+    {
+        "claim": 8,
+        "reinsured": "Kreiger Insurance",
+        "claimant": "42",
+        "type": "8675",
+        "month": "September, 2021",
+        "policy": "0013i00002O0aexQAB",
+        "location": "9",
+        "totalLossToCover": "9",
+        "totalPayableAmount": "9",
+        "lineitems": [
+            {
+                "dateOfLoss": "7",
+                "description": "7",
+                "incurred": "7",
+                "paid": "7",
+                "payable": "7"
+            },
+            {
+                "dateOfLoss": "7",
+                "description": "7",
+                "incurred": "7",
+                "paid": "7",
+                "payable": "7"
+            }
+        ]
+    },
+    {
+        "claim": 9,
+        "reinsured": "Ferry-Bode",
+        "claimant": "sadf",
+        "type": "sdf",
+        "month": "September, 2021",
+        "policy": "0013i00002OQCBOQA5",
+        "location": "sdf",
+        "totalLossToCover": "sfg",
+        "totalPayableAmount": "sf",
+        "lineitems": [
+            {
+                "dateOfLoss": "sdf",
+                "description": "sdf",
+                "incurred": "",
+                "paid": "sf",
+                "payable": ""
+            },
+            {
+                "dateOfLoss": "",
+                "description": "",
+                "incurred": "sdf",
+                "paid": "",
+                "payable": ""
+            }
+        ]
+    }
+]
