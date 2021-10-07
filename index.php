@@ -39,4 +39,5 @@ error_reporting(E_ALL);
 </ol>
 <br><br><hr><br>
 This application will stay up to date by syncing with GitHub<br>
-<a href="https://github.com/jscanzoni/legacy-demo-apps">GitHub Repo</a>
+<a href="https://github.com/jscanzoni/legacy-demo-apps">GitHub Repo</a><br><br>
+<small><strong>Version:</strong> <?=date(DATE_RFC822,exec("stat -c %Y .git/FETCH_HEAD"))?></small>
