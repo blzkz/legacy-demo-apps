@@ -25,9 +25,15 @@
 <ol>
     <?php
     foreach ($additional as $name => $page) {
-        echo "<li><a href=\"$page\">$name</li>";
+        echo "<li><a href=\"$page\">$name</a></li>";
     }
+
 
 
     ?>
 </ol>
+<br><br><hr><br>
+<form action="./gitpull.php" method="POST">
+    <button type="button">Update from GitHub</button>
+</form>
+<a href="https://github.com/jscanzoni/legacy-demo-apps">GitHub Repo</a>
