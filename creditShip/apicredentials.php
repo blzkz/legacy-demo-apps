@@ -9,6 +9,8 @@ if(isset($_POST["submit"])){
     $dataFile = fopen("./data/apicreds.json", "w") or die("Unable to open file!");
     fwrite($dataFile, json_encode($newcreds, JSON_UNESCAPED_SLASHES));
     fclose($dataFile);
+
+    echo "updated!<br><br>";
 }
 
 if (file_exists("./data/apicreds.json"))
