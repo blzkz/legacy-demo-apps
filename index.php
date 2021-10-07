@@ -33,7 +33,5 @@
     ?>
 </ol>
 <br><br><hr><br>
-<form action="./gitpull.php" method="POST">
-    <button type="button">Update from GitHub</button>
-</form>
+This application will stay up to date by syncing with GitHub<br>
 <a href="https://github.com/jscanzoni/legacy-demo-apps">GitHub Repo</a>
