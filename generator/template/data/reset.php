@@ -1,8 +1,6 @@
 <?php
-if (file_exists("config.json"))
-    $config = json_decode(file_get_contents('config.json'), true);
-else
-    die("Can't find config.json");
+
+$config = json_decode(file_get_contents('./config.json'), true) or die("Can't find config.json");
 
 $shortNamePlural = $config["app_settings"]["shortNamePlural"];
 
