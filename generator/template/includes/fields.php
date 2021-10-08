@@ -2,7 +2,7 @@
 if (file_exists("./data/config.json"))
     $config = json_decode(file_get_contents('./data/config.json'),true);
 else
-    die;
+    die("Can't find config.json");
 
 $appname = $config["app_settings"]["appname"];
 $domain = $config["app_settings"]["domain"];

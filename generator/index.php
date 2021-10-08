@@ -41,7 +41,11 @@ if (isset($_POST['publish'])) {
 
     recurse_copy(getcwd() . "/template", $newFolderName);
 
-    $dataFile = fopen($newFolderName . "/data/reset.json", "w") or die("Unable to open file!");
+    $resetFile = fopen($newFolderName . "/data/reset.json", "w") or die("Unable to open file!");
+    fwrite($resetFile, $_POST["data"]);
+    fclose($resetFile);
+
+    $dataFile = fopen($newFolderName . "/data/data.json", "w") or die("Unable to open file!");
     fwrite($dataFile, $_POST["data"]);
     fclose($dataFile);
 
@@ -49,7 +53,7 @@ if (isset($_POST['publish'])) {
     fwrite($configFile, $_POST["config"]);
     fclose($configFile);
 
-    header("Location: /app_test/");
+    header("Location: /app_$app_folder/");
 
 }
 
