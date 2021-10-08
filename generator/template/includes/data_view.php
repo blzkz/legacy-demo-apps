@@ -27,13 +27,6 @@ foreach (array_reverse($data_list) as $key => $data) {
             echo "</table><br />";
         }
 
-        if ($data->number === "") {
-            echo "<form action=\"./update.php\" method=\"POST\">
-                    <input type=\"hidden\" id=\"id\" name=\"id\" value=\"$newId\">
-                    <input id=\"approve-$shortNameLower-$newId-button\" type=\"submit\" value=\"Approve\" name=\"approve\"/>
-                </form><br /><br />";
-        }
-
         break;
     }
 }

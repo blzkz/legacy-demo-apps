@@ -1,0 +1,57 @@
+{
+    "app_settings": {
+        "appname": "Credit Card Shipper",
+        "domain": "creditcardship.com",
+        "copyright": "2004",
+        "recordName": "Card Request",
+        "shortName": "Request",
+        "shortNamePlural": "Requests",
+        "firstIdNumber": 4020
+    },
+    "fields": {
+        "hidden": [
+            "id"
+        ],
+        "visible": {
+            "Customer Information": [
+                "fname",
+                "lname",
+                "street1",
+                "street2",
+                "city",
+                "state",
+                "zip"
+            ],
+            "Credit Card Information": [
+                "type",
+                "number",
+                "exp",
+                "cvv"
+            ],
+            "Shipping Information": [
+                "tracking",
+                "shipped",
+                "eta"
+            ]
+        }
+    },
+    "summaryFields": [
+        "id",
+        "fname",
+        "lname",
+        "type"
+    ],
+    "friendlyFieldNameOverrides": {
+        "id": "ID",
+        "fname": "First Name",
+        "lname": "Last Name",
+        "street1": "Street 1",
+        "street2": "Street 2",
+        "number": "Card Number",
+        "exp": "Expiration Date",
+        "cvv": "CVV",
+        "tracking": "Tracking Number",
+        "shipped": "Shipped Date",
+        "eta": "ETA"
+    }
+}
