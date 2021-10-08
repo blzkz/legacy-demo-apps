@@ -15,6 +15,8 @@ error_reporting(E_ALL);
 
     $additional = [
         "PHP Info" => "phpinfo.php",
+        "Legacy Apps Documentation (Google Doc)" => "https://docs.google.com/document/d/1VlcBsGNCLqQHomLhtFRr7gYgnluuUbmlHVL39XhSfSM/edit?usp=sharing",
+
     ];
 
     ksort($additional);
