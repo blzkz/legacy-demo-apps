@@ -17,18 +17,41 @@ if (isset($_POST['update']))
     unset($_POST['data']);
 
 
+$settings = json_decode($config, true);
 
-if (isset($_POST['firstData'])) {
-    $settings = json_decode($config, true);
+$sample = [];
 
-    foreach ($settings["fields"]["hidden"] as $field) {
-        $data[0][$field] = $_POST[$field];
-    }
-    foreach ($settings["fields"]["visible"] as $section => $items) {
+$numLines = isset($_POST["numLines"]) ? intval($_POST["numLines"]) : 0;
+
+if (isset($_POST['new-lineitem'])) {
+    $numLines++;
+}
+
+foreach ($settings["fields"]["hidden"] as $field) {
+    $sample[$field] = isset($_POST[$field]) ? $_POST[$field] : "";
+}
+
+foreach ($settings["fields"]["visible"] as $section => $items) {
+    if ($section == "Line Items") {
+        $sample["lineitems"] = [];
+        for ($i = 0; $i < $numLines; $i++) {
+            foreach ($items as $field) {
+                $sample["lineitems"][$i][$field] = isset($_POST["lineitem-$field" . $i]) ? $_POST["lineitem-$field" . $i] : "";
+            }
+        }
+    } else {
         foreach ($items as $field) {
-            $data[0][$field] = $_POST[$field];
+            $sample[$field] = isset($_POST[$field]) ? $_POST[$field] : "";
         }
     }
+}
+
+if (isset($_POST['firstData']) && !isset($_POST["new-lineitem"])) {
+    $settings = json_decode($config, true);
+
+
+    $data[0] = $sample;
+
     unset($_POST['firstData']);
     $count = 1;
 }
@@ -104,21 +127,39 @@ if (isset($_POST['publish'])) {
                 <button name="update" <?= ($count < 1 ? "" : "style=\"background-color: #f44336; color:#FFFFFF;\""); ?>>Update Form and Clear Data</button><br><br>
                 <small>(<a href="https://restfulapi.net/json-syntax/" target="_blank">JSON Syntax Refresher</a>)</small><br>
                 <textarea name="config" id="config" cols="75" rows="40"><?= $config; ?></textarea>
-                <small>
-                    <ul>
-                        <li><strong>appname: </strong>Application header</li>
-                        <li><strong>domain: </strong>Shows up in the fake email address in the footer</li>
-                        <li><strong>copyright: </strong>Shows up in the footer to show that the app is super outdated</li>
-                        <li><strong>recordName: </strong>Like an Appian record name</li>
-                        <li><strong>shortName: </strong>Used in places like buttons</li>
-                        <li><strong>shortNamePlural: </strong>What do we call multiple records?</li>
-                        <li><strong>firstIdNumber: </strong>Integer value for the first record.. Will increment up for each new record</li>
-                        <li><strong>fields -> hidden: </strong>Fields that won't show up in the form, but are accessible through RPA</li>
-                        <li><strong>fields -> visible: </strong>Fields that users will fill in, broken up by section</li>
-                        <li><strong>summaryFileds: </strong>This is like the Appian record list.. make sure it's a field from above</li>
-                        <li><strong>friendlyFieldNameOverrides: </strong>Override a field name you don't want to show using title case</li>
-                    </ul>
-                </small>
+                <div style="width: 600px;"><small>
+                        <ul>
+                            <li><strong>app_settings</strong>
+                                <ul>
+                                    <li style="margin-bottom: 6px;"><strong>appname: </strong>Application header</li>
+                                    <li style="margin-bottom: 6px;"><strong>domain: </strong>Shows up in the fake email address in the footer</li>
+                                    <li style="margin-bottom: 6px;"><strong>copyright: </strong>Shows up in the footer to show that the app is super outdated</li>
+                                    <li style="margin-bottom: 6px;"><strong>recordName: </strong>Like an Appian record name</li>
+                                    <li style="margin-bottom: 6px;"><strong>shortName: </strong>Used in places like buttons</li>
+                                    <li style="margin-bottom: 6px;"><strong>shortNamePlural: </strong>What do we call multiple records?</li>
+                                    <li style="margin-bottom: 6px;"><strong>lineItemRecordName: </strong>What do we call a line item?</li>
+                                    <li style="margin-bottom: 6px;"><strong>lineItemRecordNamePlural: </strong>What do we call multiple line items?</li>
+                                    <li style="margin-bottom: 6px;"><strong>firstIdNumber: </strong>Integer value for the first record.. Will increment up for each new record</li>
+                                </ul>
+                            </li>
+                            <li><strong>fields</strong>
+                                <ul>
+                                    <li style="margin-bottom: 6px;"><strong>hidden: </strong>Fields that won't show up in the form, but are accessible through RPA</li>
+                                    <li style="margin-bottom: 6px;"><strong>visible: </strong>Fields that users will fill in, broken up by section<ul>
+                                            <li style="margin-bottom: 6px;margin-top: 6px;"><strong>Line Items: </strong>You can create ONE section called "Line Items" and it will name the section whatever you set in <strong>lineItemRecordName</strong>.
+                                                <ul>
+                                                <li>Don't name it anything other than "Line Items"</li>
+                                                <li>If you don't need line items, just delete this section.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li style="margin-bottom: 6px;"><strong>summaryFields: </strong>This is like the Appian record list.. make sure it's a field from above, but not a field from the line items.</li>
+                            <li style="margin-bottom: 6px;"><strong>friendlyFieldNameOverrides: </strong>Override a field name you don't want to show using title case</li>
+                        </ul>
+                    </small></div>
             </td>
             <td style="width: 50%; vertical-align:top;">
                 <?php

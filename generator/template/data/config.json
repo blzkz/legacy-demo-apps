@@ -6,6 +6,8 @@
         "recordName": "Card Request",
         "shortName": "Request",
         "shortNamePlural": "Requests",
+        "lineItemRecordName": "Additional Authorized User",
+        "lineItemRecordNamePlural": "Additional Authorized Users",
         "firstIdNumber": 4020
     },
     "fields": {
@@ -22,6 +24,10 @@
                 "state",
                 "zip"
             ],
+            "Line Items": [
+                "fname",
+                "lname"
+            ],
             "Credit Card Information": [
                 "type",
                 "number",
@@ -33,6 +39,7 @@
                 "shipped",
                 "eta"
             ]
+
         }
     },
     "summaryFields": [
