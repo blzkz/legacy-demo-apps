@@ -5,7 +5,7 @@ $data = null;
 $app_folder = null;
 
 if (isset($_POST['app_folder']))
-    $app_folder = $_POST['app_folder'];
+    $app_folder = strtolower(str_replace(" ", "_", $_POST['app_folder']));
 
 
 if (!isset($_POST['config']))
@@ -76,9 +76,20 @@ if (isset($_POST['publish'])) {
                     <strong>1. App Folder Name:&nbsp;</strong>
                 </td>
                 <td style="vertical-align:top; text-align:right;">
-                    <input type="text" name="app_folder" id="app_folder" value="<?= $app_folder; ?>" size="45"><br>
-                    <small>Please use a <strong>unique</strong> name and don't use spaces.</small><br><br>
-                    <div style="text-align:right"><button name="publish" <?= ($count < 1 ? "disabled" : ""); ?>>5. Publish App</button></div>
+                    <input type="text" name="app_folder" id="app_folder" value="<?= $app_folder; ?>" size="45">
+                    <?php
+                    if (strlen($app_folder) > 1) {
+                        $newFolderName = getcwd() . "/../app_" . $app_folder;
+
+                        if (is_dir($newFolderName))
+                            echo "<br><small style=\"color: #f44336;\"><strong>Folder &quot;$app_folder&quot; already exists</strong></small>";
+                    }
+                    ?>
+                    <br>
+                    <small>Please use a <strong>unique</strong> name and don't use spaces.</small>
+
+                    <br><br>
+                    <div style="text-align:right"><button name="publish" <?= ($count < 1 ? "disabled" : "style=\"background-color: #008CBA; color:#FFFFFF;\""); ?>>5. Publish App</button></div>
                 </td>
             </tr>
         </table><br>
@@ -90,7 +101,7 @@ if (isset($_POST['publish'])) {
                 <h2>
                     2. config.json
                 </h2>
-                <button name="update">Update Form and Clear Data</button><br><br>
+                <button name="update" <?= ($count < 1 ? "" : "style=\"background-color: #f44336; color:#FFFFFF;\""); ?>>Update Form and Clear Data</button><br><br>
                 <small>(<a href="https://restfulapi.net/json-syntax/" target="_blank">JSON Syntax Refresher</a>)</small><br>
                 <textarea name="config" id="config" cols="75" rows="40"><?= $config; ?></textarea>
                 <small>
@@ -109,7 +120,7 @@ if (isset($_POST['publish'])) {
                     </ul>
                 </small>
             </td>
-            <td style="width: 50%;">
+            <td style="width: 50%; vertical-align:top;">
                 <?php
                 if ($count == 0) {
                     include("./dataform.php");

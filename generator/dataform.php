@@ -3,7 +3,7 @@
 
             $settings = json_decode($config, true);
             echo "<h2 style=\"text-align: left;\">3. First " . $settings["app_settings"]["recordName"] . "</h2>";
-            echo "<div style=\"text-align:left;\"><input id=\"firstData\" name=\"firstData\" type=\"submit\" value=\"Generate data.json from first record\" /></div><br>";
+            echo "<div style=\"text-align:left;\"><input id=\"firstData\" name=\"firstData\" type=\"submit\" value=\"Generate data.json from first record\" style=\"background-color: #008CBA; color:#FFFFFF;\"/></div><br>";
             echo "<small>(This is what your data entry form is going to look like)</small><br>";
             echo "<table style=\"border: 1px solid #000000;\">
             <tr>
