@@ -50,7 +50,7 @@ foreach ($settings["fields"]["visible"] as $section => $items) {
             }
             echo "</tr>";
         }
-        echo "<tr style=\"border: 1px solid #666666;\"><td colspan=\"5\"><input id=\"new-lineitem\" name=\"new-lineitem\" type=\"submit\" value=\"Add Line\" /></td><tr>";
+        echo "<tr style=\"border: 1px solid #666666;\"><td colspan=\"5\"><input id=\"new-lineitem\" name=\"new-lineitem\" type=\"submit\" value=\"Add ".$settings["app_settings"]["lineItemRecordName"]."\" /></td><tr>";
         echo "</table>";
     } else {
         echo "<h3>$section</h3>";

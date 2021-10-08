@@ -6,7 +6,7 @@
         "recordName": "Card Request",
         "shortName": "Request",
         "shortNamePlural": "Requests",
-        "lineItemRecordName": "Additional Authorized User",
+        "lineItemRecordName": "Authorized User",
         "lineItemRecordNamePlural": "Additional Authorized Users",
         "firstIdNumber": 4020
     },
@@ -16,8 +16,7 @@
         ],
         "visible": {
             "Customer Information": [
-                "fname",
-                "lname",
+                "fname","lname",
                 "street1",
                 "street2",
                 "city",
