@@ -54,7 +54,6 @@ if (isset($_POST['publish'])) {
     fclose($configFile);
 
     header("Location: /app_$app_folder/");
-
 }
 
 ?>
@@ -92,7 +91,23 @@ if (isset($_POST['publish'])) {
                     2. config.json
                 </h2>
                 <button name="update">Update Form and Clear Data</button><br><br>
+                <small>(<a href="https://restfulapi.net/json-syntax/" target="_blank">JSON Syntax Refresher</a>)</small><br>
                 <textarea name="config" id="config" cols="75" rows="40"><?= $config; ?></textarea>
+                <small>
+                    <ul>
+                        <li><strong>appname: </strong>Application header</li>
+                        <li><strong>domain: </strong>Shows up in the fake email address in the footer</li>
+                        <li><strong>copyright: </strong>Shows up in the footer to show that the app is super outdated</li>
+                        <li><strong>recordName: </strong>Like an Appian record name</li>
+                        <li><strong>shortName: </strong>Used in places like buttons</li>
+                        <li><strong>shortNamePlural: </strong>What do we call multiple records?</li>
+                        <li><strong>firstIdNumber: </strong>Integer value for the first record.. Will increment up for each new record</li>
+                        <li><strong>fields -> hidden: </strong>Fields that won't show up in the form, but are accessible through RPA</li>
+                        <li><strong>fields -> visible: </strong>Fields that users will fill in, broken up by section</li>
+                        <li><strong>summaryFileds: </strong>This is like the Appian record list.. make sure it's a field from above</li>
+                        <li><strong>friendlyFieldNameOverrides: </strong>Override a field name you don't want to show using title case</li>
+                    </ul>
+                </small>
             </td>
             <td style="width: 50%;">
                 <?php
@@ -103,6 +118,7 @@ if (isset($_POST['publish'])) {
                     <h2>
                         4. data.json
                     </h2><br><br>
+                    <small>(<a href="https://restfulapi.net/json-syntax/" target="_blank">JSON Syntax Refresher</a>)</small><br>
                     <textarea name="data" id="data" cols="75" rows="40"><?= json_encode($data, JSON_UNESCAPED_SLASHES); ?></textarea>
                 <?php
                 }
