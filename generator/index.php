@@ -13,6 +13,7 @@ if (!isset($_POST['config']))
 else
     $config = $_POST['config'];
 
+
 if (isset($_POST['update']))
     unset($_POST['data']);
 
@@ -124,7 +125,7 @@ if (isset($_POST['publish'])) {
                 <h2>
                     2. config.json
                 </h2>
-                <button name="update" <?= ($count < 1 ? "" : "style=\"background-color: #f44336; color:#FFFFFF;\""); ?>>Update Form and Clear Data</button><br><br>
+                <button name="update" <?= ($count < 1 ? "" : "style=\"background-color: #f44336; color:#FFFFFF;\""); ?>><?= ($count < 1 ? "Update Form" : "Reset Data Structure, Clear data.json, and Fill In Form Again"); ?></button><br><br>
                 <small>(<a href="https://restfulapi.net/json-syntax/" target="_blank">JSON Syntax Refresher</a>)</small><br>
                 <textarea name="config" id="config" cols="75" rows="40"><?= $config; ?></textarea>
                 <div style="width: 600px;"><small>
