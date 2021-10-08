@@ -11,6 +11,8 @@ $recordName = $config["app_settings"]["recordName"];
 $shortName = $config["app_settings"]["shortName"];
 $shortNameLower = strtolower($shortName);
 $shortNamePlural = $config["app_settings"]["shortNamePlural"];
+$lineItemRecordName = $config["app_settings"]["lineItemRecordName"];
+$lineItemRecordNamePlural = $config["app_settings"]["lineItemRecordNamePlural"];
 
 $fields = $config["fields"];
 

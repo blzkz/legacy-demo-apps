@@ -1,5 +1,5 @@
 <?php
-$claimNo = (isset($_GET['c']) ? $_GET['c'] : null);
+$claimNo = (isset($_GET['c']) ? $_GET['c'] : null); 
 
 $file = file_get_contents('./data/data.json');
 $claims = json_decode($file, FALSE);
