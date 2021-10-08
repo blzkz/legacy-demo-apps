@@ -59,7 +59,7 @@ if (isset($_POST['publish'])) {
 
 ?>
 <h1>Generate a Custom Legacy App</h1>
-<span>Note: this wasn't made in Appian, and there was very minimal effort for UX!</span><br>
+<span>Note: this wasn't made in Appian, and there was only a very minimal level of effort spent on this UX!</span><br>
 <ol>
     <li>Give it a name</li>
     <li>Update config.json</li>
