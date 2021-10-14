@@ -1,6 +1,6 @@
 <?php
 if (file_exists("./data/config.json"))
-    $config = json_decode(file_get_contents('./data/config.json'),true);
+    $config = json_decode(file_get_contents('./data/config.json'), true);
 else
     die("Can't find config.json");
 
@@ -19,3 +19,11 @@ $fields = $config["fields"];
 $displayName = $config["friendlyFieldNameOverrides"];
 
 $summaryFields = $config["summaryFields"];
+
+
+$webhook_enabled = strlen($config["app_settings"]["webhook"]["key"]) > 1 ? true : false;
+$webhook_url = $config["app_settings"]["webhook"]["url"];
+$webhook_key = $config["app_settings"]["webhook"]["key"];
+$webhook_tetherField = $config["app_settings"]["webhook"]["enabledWhenBlankTetherField"];
+$webhook_actionDescription = $config["app_settings"]["webhook"]["actionDescription"];
+$webhook_processPageDescription = $config["app_settings"]["webhook"]["processPageDescription"];

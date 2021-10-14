@@ -141,6 +141,14 @@ if (isset($_POST['publish'])) {
                                     <li style="margin-bottom: 6px;"><strong>lineItemRecordName: </strong>What do we call a line item?</li>
                                     <li style="margin-bottom: 6px;"><strong>lineItemRecordNamePlural: </strong>What do we call multiple line items?</li>
                                     <li style="margin-bottom: 6px;"><strong>firstIdNumber: </strong>Integer value for the first record.. Will increment up for each new record</li>
+                                    <li style="margin-bottom: 6px;"><strong>webhook: </strong>If you want fields to update when you press a button, this will send the entire data in JSON to Appian so you can use expression language to return a JSON body of fields which will get updated in this app, or you can use this webhook to trigger actions in your Appian application<ul>
+                                        <li style="margin-bottom: 6px;margin-top: 6px;"><strong>url: </strong>Appian web API URL</li>
+                                        <li style="margin-bottom: 6px;"><strong>key: </strong>Appian API key with access to the webhook.</li>
+                                        <li style="margin-bottom: 6px;"><strong>enabledWhenBlankTetherField: </strong>If this is set, your action button will only show when this field is empty</li>
+                                        <li style="margin-bottom: 6px;"><strong>actionDescription: </strong>Label of the button on the view record screen</li>
+                                        <li style="margin-bottom: 6px;"><strong>processPageDescription: </strong>Text displayed for 3 seconds when things are updating</li>
+
+                                    </ul></li>
                                 </ul>
                             </li>
                             <li><strong>fields</strong>

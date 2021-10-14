@@ -8,7 +8,14 @@
         "shortNamePlural": "Requests",
         "lineItemRecordName": "Authorized User",
         "lineItemRecordNamePlural": "Additional Authorized Users",
-        "firstIdNumber": 4020
+        "firstIdNumber": 4020,
+        "webhook": {
+            "url": "https://orchestrate.appiancloud.com/suite/webapi/CreditCardLogic",
+            "key": "",
+            "enabledWhenBlankTetherField": "number",
+            "actionDescription": "Approve",
+            "processPageDescription": "Assigning credit card and processing shipment"
+        }
     },
     "fields": {
         "hidden": [

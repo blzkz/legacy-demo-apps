@@ -5,6 +5,7 @@ $newId = $_GET['i'];
 $file = file_get_contents('./data/data.json');
 $data_list = json_decode($file, FALSE);
 
+
 //var_dump($data_list);
 echo "<h2 style=\"text-align: center;\">$recordName #" . ($newId) . "</h2>";
 foreach (array_reverse($data_list) as $key => $data) {
@@ -51,8 +52,14 @@ foreach (array_reverse($data_list) as $key => $data) {
                 }
                 echo "</table><br />";
             }
+            
         }
-
+        if ($webhook_enabled & ($webhook_tetherField == "" | $data->$webhook_tetherField == "") ){
+            echo "<form action=\"./update.php\" method=\"POST\">
+                    <input type=\"hidden\" id=\"id\" name=\"id\" value=\"$newId\">
+                    <input id=\"action-$shortNameLower-$newId-button\" type=\"submit\" value=\"".$webhook_actionDescription."\" name=\"action\"/>
+                </form><br /><br />";
+        }
         break;
     }
 }
