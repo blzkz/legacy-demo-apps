@@ -3,6 +3,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+if(!file_exists("./.uuid")){
+    $uuid = uniqid();
+    $uuidFile = fopen("./.uuid", "w") or die("Unable to open file!");
+    fwrite($uuidFile, $uuid);
+    fclose($uuidFile);
+}else{
+    $uuid = file_get_contents('./.uuid');
+}
+
 ?>
 <h3>Main Legacy Apps</h3>
 <ol>
@@ -58,3 +67,5 @@ error_reporting(E_ALL);
 <hr><br>
 This application will stay up to date by syncing with the <a href="https://github.com/jscanzoni/legacy-demo-apps">Legacy Demo Apps GitHub Repo</a><br><br>
 <small><strong>Version:</strong> <?= date(DATE_RFC822, exec("stat -c %Y .git/FETCH_HEAD")) ?></small>
+<small><br><br><strong>UUID: </strong> <?=$uuid?></small>
+<iframe src="/generator/backup.php" title="backup" style="height:1px;width:1px;border-width:0px;"></iframe>

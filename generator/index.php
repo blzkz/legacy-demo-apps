@@ -77,6 +77,8 @@ if (isset($_POST['publish'])) {
     fwrite($configFile, $_POST["config"]);
     fclose($configFile);
 
+    include "./backup.php";
+
     header("Location: /app_$app_folder/");
 }
 
