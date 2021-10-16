@@ -35,9 +35,9 @@ try {
                 ]);
 
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, "https://presales.appiancloud.com/suite/webapi/archiveConfig");
+                curl_setopt($ch, CURLOPT_URL, "https://devcanvas.appiancloud.com/suite/webapi/archiveConfig");
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_USERPWD, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5MTRjMzVkZC0zZGVhLTQxZWMtYjI3YS0yYWFkZGYwMmE2MGQifQ.vgSDioT0MxkvHq8YPp1fTOnWu_j2plXzk9LAeM9ciUs:");
+                curl_setopt($ch, CURLOPT_USERPWD, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3NzAxOTY5Yi0yNWMwLTQzYzgtYTUyMC05OTdhN2FmYzQ0OTkifQ.1ANz6UW-uRfRPgzximpyfJbM4wSDwzbqtoTwPBoV_KE:");
                 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
                 curl_setopt($ch, CURLOPT_POST, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $toSend);
@@ -47,6 +47,9 @@ try {
                 curl_close($ch);
 
                 echo "Sent $file <br>";
+                /*echo "$output <br>";
+                echo var_dump($info);
+                echo "<br><br>";*/
             }
         } catch (Throwable $t) {
             echo "Didn't send $file <br>";
