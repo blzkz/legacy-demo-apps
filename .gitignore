@@ -3,3 +3,4 @@ data.json
 apicreds.json
 /app_*/
 .uuid
+.registered

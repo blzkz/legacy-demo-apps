@@ -3,6 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+if(!file_exists("./.registered"))
+    header("Location: /register.php");
+
+
 if(!file_exists("./.uuid")){
     $uuid = uniqid();
     $uuidFile = fopen("./.uuid", "w") or die("Unable to open file!");
