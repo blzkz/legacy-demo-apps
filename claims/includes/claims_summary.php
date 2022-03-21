@@ -57,7 +57,7 @@ if ($total <= $end) {
     }
     echo "</table>";
     echo "<br><br>";
-    echo "$start - $end of $total<br><br>";
+    echo "<span id=\"listStart\">$start</span> - <span id=\"listEnd\">$end</span> of <span id=\"totalRecords\">$total</span><br><br>";
 
     if (!$lastpage)
         echo "<a href=\"list.php?s=" . ($end + 1) . "\">Next Page</a><br>";
